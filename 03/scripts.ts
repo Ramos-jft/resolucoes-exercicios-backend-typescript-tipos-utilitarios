@@ -17,10 +17,10 @@ const conexao = (dados: Conn): Readonly<Conexao> => {
         driver: 'postgres',
         url: `postgresql://${username}:${password}@${host}:${port}/${dbname}`
     };
-}
+};
 
-const conecta = conexao({
-    username: 'guido',
+const conectar = conexao({
+    username: 'lucas',
     password: '123',
     host: 'localhost',
     port: '5432',

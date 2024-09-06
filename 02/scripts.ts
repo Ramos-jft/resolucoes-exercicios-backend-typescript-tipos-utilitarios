@@ -29,9 +29,34 @@ type Endereco = {
 }
 
 type NovoCarrinho = Omit<Carrinho, 'tipoTransacao'> & {
-    endereco: Endereco,
-    tipoTransacao: Lowercase<'credito' | 'Debito'>
-}
+    endereco: Endereco
+    tipoTransacao: Lowercase<'credito' | 'Debito'>;
+};
+
+const venda: NovoCarrinho = {
+    item: {
+        nome: 'Celular',
+        descricao: 'Ihpne 15',
+        valor: 800000
+    },
+    qtd: 2,
+    desconto: 10,
+    frete: 10000,
+    tipoTransacao: 'debito',
+    cartao: {
+        numero: 1234 - 5678 - 9101,
+        validade: '12/30',
+        nome: 'Lucas Ramos',
+        cvv: 123
+    },
+    endereco: {
+        cep: '12345-678',
+        rua: 'Marginal Santana',
+        bairro: 'Nova Europa',
+        cidade: 'Catanduva',
+        estado: 'SP'
+    }
+};
 
 // type NovoCarrinho = {
 //     item: Item,
@@ -39,31 +64,6 @@ type NovoCarrinho = Omit<Carrinho, 'tipoTransacao'> & {
 //     desconto: number,
 //     frete: number,
 //     tipoTransacao: Lowercase<'credito' | 'Debito'>,
-//     cartao: Cartao
+//     cartao: Cartao,
 //     endereco: Endereco
-// }
-
-const venda: NovoCarrinho = {
-    item: {
-        nome: 'string',
-        descricao: 'string',
-        valor: 123
-    },
-    qtd: 3,
-    desconto: 12,
-    frete: 100,
-    tipoTransacao: 'debito',
-    cartao: {
-        numero: 123,
-        validade: 'string',
-        nome: 'string',
-        cvv: 123
-    },
-    endereco: {
-        cep: 'string',
-        rua: 'string',
-        bairro: 'string',
-        cidade: 'string',
-        estado: 'string'
-    }
-}
+// };
